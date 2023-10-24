@@ -11,6 +11,8 @@ public class AuthorConfiguration : IEntityTypeConfiguration<Author>
 		builder.ToTable("authors", "library");
 		
 		builder.HasKey(x => x.Id);
+
+		builder.Property(e => e.Id).ValueGeneratedNever();
 		builder.Property(x => x.Name).IsRequired();
 	}
 }

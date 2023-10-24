@@ -11,6 +11,8 @@ public class PublisherConfiguration : IEntityTypeConfiguration<Publisher>
 		builder.ToTable("publishers", "library");
 		
 		builder.HasKey(x => x.Id);
+		
+		builder.Property(e => e.Id).ValueGeneratedNever();
 		builder.Property(x => x.Name).IsRequired();
 	}
 }

@@ -11,6 +11,8 @@ public class GenreConfiguration : IEntityTypeConfiguration<Genre>
 		builder.ToTable("genres", "library");
 		
 		builder.HasKey(x => x.Id);
+		
+		builder.Property(e => e.Id).ValueGeneratedNever();
 		builder.Property(x => x.Name).IsRequired();
 	}
 }

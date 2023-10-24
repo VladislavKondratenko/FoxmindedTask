@@ -11,6 +11,8 @@ public class  BookConfiguration : IEntityTypeConfiguration<Book>
 		builder.ToTable("books", "library");
 		
 		builder.HasKey(x => x.Id);
+		
+		builder.Property(e => e.Id).ValueGeneratedNever();
 		builder.Property(x => x.Title).IsRequired();
 		builder.Property(x => x.Pages).IsRequired();
 		builder.Property(x => x.ReleaseDate).IsRequired();
